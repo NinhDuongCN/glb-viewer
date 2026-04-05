@@ -1,0 +1,135 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --border-color: #cccccc;
+    --accent-color: #007bff;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --border-color: #444444;
+    --accent-color: #4dabf7;
+    --shadow: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px var(--shadow);
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+#theme-toggle {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+#theme-toggle:hover {
+    background-color: #0056b3;
+}
+
+.dark #theme-toggle {
+    background-color: var(--accent-color);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+#viewer-container {
+    width: 100%;
+    max-width: 800px;
+    height: 60vh;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px var(--shadow);
+    margin-bottom: 1rem;
+}
+
+#viewer {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 0.5rem;
+}
+
+#controls {
+    text-align: center;
+}
+
+#file-input {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+#controls p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+/* Mobile-first responsive */
+@media (min-width: 768px) {
+    header {
+        padding: 1rem 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #viewer-container {
+        height: 70vh;
+    }
+
+    main {
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    #viewer-container {
+        height: 80vh;
+    }
+}
