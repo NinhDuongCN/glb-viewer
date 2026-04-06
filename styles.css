@@ -94,9 +94,19 @@ main {
     text-align: center;
 }
 
+#controls label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+#model-select,
 #file-input {
     margin-bottom: 0.5rem;
     padding: 0.5rem;
+    width: 100%;
+    max-width: 320px;
     border: 1px solid var(--border-color);
     border-radius: 0.5rem;
     background-color: var(--bg-color);

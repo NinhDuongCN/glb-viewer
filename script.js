@@ -30,8 +30,16 @@ controls.maxDistance = 50;
 const loader = new THREE.GLTFLoader();
 let model;
 
+const modelSelector = document.getElementById('model-select');
+const fileInput = document.getElementById('file-input');
+
 // Load default model
-loadModel('6.1.glb');
+loadModel('models/room.glb');
+
+modelSelector.addEventListener('change', function() {
+    loadModel(this.value);
+    fileInput.value = '';
+});
 
 function loadModel(url) {
     loader.load(
@@ -59,11 +67,12 @@ function loadModel(url) {
     );
 }
 
-document.getElementById('file-input').addEventListener('change', function(event) {
+fileInput.addEventListener('change', function(event) {
     const file = event.target.files[0];
     if (file) {
         const url = URL.createObjectURL(file);
         loadModel(url);
+        modelSelector.selectedIndex = 0;
     }
 });
 

@@ -16,8 +16,19 @@
             <canvas id="viewer"></canvas>
         </div>
         <div id="controls">
+            <label for="model-select">Chọn mô hình:</label>
+            <select id="model-select">
+                <option value="models/room.glb">room.glb</option>
+                <option value="models/Canh tu 2.glb">Canh tu 2.glb</option>
+                <option value="models/gia_de_ban.glb">gia_de_ban.glb</option>
+                <option value="models/giuong_phu_2.glb">giuong_phu_2.glb</option>
+                <option value="models/khung ban 1.glb">khung ban 1.glb</option>
+                <option value="models/mat ban 1.glb">mat ban 1.glb</option>
+                <option value="models/tu 2.glb">tu 2.glb</option>
+                <option value="models/tu_quan_ao_2.glb">tu_quan_ao_2.glb</option>
+            </select>
             <input type="file" id="file-input" accept=".glb">
-            <p>Upload a GLB file or view the default model.</p>
+            <p>Choose a model from the folder or upload your own GLB file.</p>
         </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
